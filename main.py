@@ -77,6 +77,15 @@ class VectorEditorCLI(cmd.Cmd):
         except ValueError:
             print("Ошибка: неверный аргумент. Использование: remove <id>")
 
+    def emptyline(self):
+        """Не повторяет последнюю команду при пустом вводе."""
+        pass
+
+    def do_EOF(self, arg):
+        """Выйти по Ctrl+D (EOF)."""
+        print()
+        return True
+
     def do_exit(self, arg):
         """Выйти из редактора: exit"""
         print("До свидания!")
